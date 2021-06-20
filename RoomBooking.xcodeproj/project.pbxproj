@@ -18,7 +18,7 @@
 		623FAC55267954FF00C282D1 /* ElementHelper+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623FAC54267954FF00C282D1 /* ElementHelper+Extension.swift */; };
 		6299CD9A267C7835006F9CA2 /* RoomBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299CD99267C7835006F9CA2 /* RoomBookingCell.swift */; };
 		6299CD9E267C7890006F9CA2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299CD9D267C7890006F9CA2 /* Models.swift */; };
-		6299CDA2267C78D3006F9CA2 /* NewworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299CDA1267C78D3006F9CA2 /* NewworkService.swift */; };
+		6299CDA2267C78D3006F9CA2 /* NewworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299CDA1267C78D3006F9CA2 /* NewworkManager.swift */; };
 		6299CDA6267C7911006F9CA2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299CDA5267C7911006F9CA2 /* NetworkRequest.swift */; };
 		6299CDAF267DBB31006F9CA2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299CDAE267DBB31006F9CA2 /* UIView+Extension.swift */; };
 		6299CDC3267ED12B006F9CA2 /* RequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299CDC2267ED12B006F9CA2 /* RequestTest.swift */; };
@@ -50,7 +50,7 @@
 		623FAC54267954FF00C282D1 /* ElementHelper+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ElementHelper+Extension.swift"; sourceTree = "<group>"; };
 		6299CD99267C7835006F9CA2 /* RoomBookingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomBookingCell.swift; sourceTree = "<group>"; };
 		6299CD9D267C7890006F9CA2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		6299CDA1267C78D3006F9CA2 /* NewworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewworkService.swift; sourceTree = "<group>"; };
+		6299CDA1267C78D3006F9CA2 /* NewworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewworkManager.swift; sourceTree = "<group>"; };
 		6299CDA5267C7911006F9CA2 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		6299CDAE267DBB31006F9CA2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		6299CDC2267ED12B006F9CA2 /* RequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTest.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				6299CD99267C7835006F9CA2 /* RoomBookingCell.swift */,
 				6299CD9D267C7890006F9CA2 /* Models.swift */,
 				6299CDB6267DC566006F9CA2 /* Network */,
-				6299CDAD267DBB06006F9CA2 /* UIStyle */,
+				6299CDAD267DBB06006F9CA2 /* Extensions */,
 				6299CDBB267ECF17006F9CA2 /* Utility */,
 				623FAC0B2679201E00C282D1 /* Main.storyboard */,
 				623FAC0E2679201F00C282D1 /* Assets.xcassets */,
@@ -120,19 +120,19 @@
 			path = RoomBookingTests;
 			sourceTree = "<group>";
 		};
-		6299CDAD267DBB06006F9CA2 /* UIStyle */ = {
+		6299CDAD267DBB06006F9CA2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				623FAC54267954FF00C282D1 /* ElementHelper+Extension.swift */,
 				6299CDAE267DBB31006F9CA2 /* UIView+Extension.swift */,
 			);
-			path = UIStyle;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6299CDB6267DC566006F9CA2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				6299CDA1267C78D3006F9CA2 /* NewworkService.swift */,
+				6299CDA1267C78D3006F9CA2 /* NewworkManager.swift */,
 				6299CDA5267C7911006F9CA2 /* NetworkRequest.swift */,
 			);
 			path = Network;
@@ -253,7 +253,7 @@
 				6299CDA6267C7911006F9CA2 /* NetworkRequest.swift in Sources */,
 				623FAC062679201E00C282D1 /* AppDelegate.swift in Sources */,
 				6299CD9E267C7890006F9CA2 /* Models.swift in Sources */,
-				6299CDA2267C78D3006F9CA2 /* NewworkService.swift in Sources */,
+				6299CDA2267C78D3006F9CA2 /* NewworkManager.swift in Sources */,
 				623FAC082679201E00C282D1 /* SceneDelegate.swift in Sources */,
 				623FAC55267954FF00C282D1 /* ElementHelper+Extension.swift in Sources */,
 				6299CDAF267DBB31006F9CA2 /* UIView+Extension.swift in Sources */,

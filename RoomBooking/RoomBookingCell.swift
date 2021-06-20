@@ -14,6 +14,7 @@ class RoomCell: UICollectionViewCell {
             case .some(let thisRoom):
                 configureCell(with: thisRoom)
             case nil:
+                //TODO: add empty state config
                 return
             }
         }
@@ -53,13 +54,6 @@ class RoomCell: UICollectionViewCell {
         // add imageView
         addImageView(imgData, imgHeight: imgHeight)
         
-        // add booking btn
-        let buttonFrame = CGRect(x: (contentView.frame.size.width - CGFloat.oneThriedScreenWidth()),
-                                 y: (imgHeight + padding * 1.5),
-                                 width: CGFloat.oneThriedScreenWidth() - padding,
-                                 height: heightUnit * 1.5)
-        addBookingButton(isFull: (spots == 0), buttonFrame)
-        
         // add room name title
         let nameLabelFrame = CGRect(x: padding,
                                     y: imgHeight + padding,
@@ -74,6 +68,13 @@ class RoomCell: UICollectionViewCell {
                                      width: CGFloat.halfScreenWidth() + padding,
                                      height: heightUnit)
         addSpotsLabel(spots: spots, spotsLabelFrame)
+        
+        // add booking btn
+        let buttonFrame = CGRect(x: (contentView.frame.size.width - CGFloat.oneThriedScreenWidth()),
+                                 y: (imgHeight + padding * 1.5),
+                                 width: CGFloat.oneThriedScreenWidth() - padding,
+                                 height: heightUnit * 1.5)
+        addBookingButton(isFull: (spots == 0), buttonFrame)
     }
     
     private func addImageView(_ imgData: Data, imgHeight: CGFloat) {
@@ -118,6 +119,6 @@ class RoomCell: UICollectionViewCell {
     }
     
     @objc func bookSelected() {
-        // fetch result or an injected call-back, depending on the pattern choice
+        //TODO: fetch result or an injected call-back, depending on the pattern choice
     }
 }

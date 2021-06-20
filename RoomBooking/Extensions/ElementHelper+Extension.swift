@@ -1,12 +1,12 @@
 
 import UIKit
 
-// Only shows the item that has all the data returned from the service, sometimes there are empty payload.
+// Only read the item that has all the data returned from the service.
 extension Array where Element == Room {
     func trimCollection() -> Rooms {
         
         return self.filter { room in
-            room.name != nil
+                room.name != nil
                 && room.thumbnail != nil
                 && room.spots != nil
         }

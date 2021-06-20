@@ -15,13 +15,10 @@ struct Request {
     private let scheme: String
     private let path: String
     
-    lazy var url: URL? = nil
-    
     init(path: APIPath, scheme: String = "https") {
         
         self.path = path.rawValue
         self.scheme = scheme
-        self.url = constructURL()
     }
     
     private func constructURL() -> URL? {

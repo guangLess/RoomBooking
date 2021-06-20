@@ -5,7 +5,7 @@ import UIKit
 extension UIView {
     
     func constrainToTopAnchor(of view: UIView,
-                                 padding: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                                 padding: UIEdgeInsets = UIEdgeInsets.zero,
                                  heightConstant: CGFloat) {
         
         topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding.top).isActive = true
@@ -15,7 +15,7 @@ extension UIView {
     }
     
     func constrainToBottomAnchor(of view: UIView,
-                                 padding: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                                 padding: UIEdgeInsets = UIEdgeInsets.zero,
                                  heightConstant: CGFloat) {
         
         bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
