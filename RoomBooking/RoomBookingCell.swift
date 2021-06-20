@@ -9,11 +9,10 @@ class RoomCell: UICollectionViewCell {
         willSet {
             contentView.removeAllSubview()
         }
-        
         didSet {
             switch room {
             case .some(let thisRoom):
-                    self.configureCell(with: thisRoom)
+                configureCell(with: thisRoom)
             case nil:
                 return
             }
@@ -21,7 +20,6 @@ class RoomCell: UICollectionViewCell {
     }
     
     private lazy var button : UIButton = {
-        
         let button = UIButton(frame: CGRect.zero)
         button.setTitle("Book!", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
@@ -42,7 +40,6 @@ class RoomCell: UICollectionViewCell {
     
     private func configureCell(with room: Room) {
         
-        // NOTE: better to have a placeholder img
         guard let imgData = room.imgData,
               let name = room.name,
               let spots = room.spots else {
@@ -57,12 +54,11 @@ class RoomCell: UICollectionViewCell {
         addImageView(imgData, imgHeight: imgHeight)
         
         // add booking btn
-        let buttonFrame = CGRect(
-            x: ( contentView.frame.size.width - CGFloat.oneThriedScreenWidth()),
-            y: (imgHeight + padding * 1.5),
-            width: CGFloat.oneThriedScreenWidth() - padding,
-            height: heightUnit * 1.5)
-        addBookingButton(padding, buttonFrame)
+        let buttonFrame = CGRect(x: (contentView.frame.size.width - CGFloat.oneThriedScreenWidth()),
+                                 y: (imgHeight + padding * 1.5),
+                                 width: CGFloat.oneThriedScreenWidth() - padding,
+                                 height: heightUnit * 1.5)
+        addBookingButton(isFull: (spots == 0), buttonFrame)
         
         // add room name title
         let nameLabelFrame = CGRect(x: padding,
@@ -74,13 +70,11 @@ class RoomCell: UICollectionViewCell {
         
         // add spots label
         let spotsLabelFrame = CGRect(x: padding,
-                                     y: nameLabelFrame.origin.y + heightUnit + padding ,
+                                     y: nameLabelFrame.origin.y + heightUnit,
                                      width: CGFloat.halfScreenWidth() + padding,
                                      height: heightUnit)
-        let spotsText = String(spots) + " spots remaining"
-        addSpotsLabel(text: spotsText, spotsLabelFrame)
+        addSpotsLabel(spots: spots, spotsLabelFrame)
     }
-    
     
     private func addImageView(_ imgData: Data, imgHeight: CGFloat) {
         
@@ -95,22 +89,27 @@ class RoomCell: UICollectionViewCell {
         imgView.constrainToTopAnchor(of: contentView, heightConstant: imgHeight)
     }
     
-    private func addBookingButton(_ spacer: CGFloat, _ frame: CGRect) {
+    private func addBookingButton(isFull: Bool, _ frame: CGRect) {
         contentView.addSubview(button)
         button.frame = frame
         
-        button.addTarget(self, action: #selector(bookSelected), for: .touchUpInside)
+        if isFull {
+            button.backgroundColor = .lightGray
+        } else {
+            button.addTarget(self, action: #selector(bookSelected), for: .touchUpInside)
+        }
     }
     
     private func addNameLable(text: String, _ frame: CGRect) {
         let nameTitle = UILabel.defaultStyle(text: text,
-                                             font: UIFont.systemFont(ofSize: 27, weight: .semibold),
+                                             font: UIFont.systemFont(ofSize: 24, weight: .semibold),
                                              textColor: .black)
         contentView.addSubview(nameTitle)
         nameTitle.frame = frame
     }
     
-    private func addSpotsLabel(text: String, _ frame: CGRect) {
+    private func addSpotsLabel(spots: Int, _ frame: CGRect) {
+        let text = String(spots) + " spots remaining"
         let spotsLabel = UILabel.defaultStyle(text: text,
                                               font: UIFont.systemFont(ofSize: 22, weight: .thin),
                                               textColor: .customPurple())
@@ -122,4 +121,3 @@ class RoomCell: UICollectionViewCell {
         // fetch result or an injected call-back, depending on the pattern choice
     }
 }
-

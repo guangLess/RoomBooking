@@ -18,13 +18,11 @@ class RoomsViewController: UIViewController {
         let height = cellWidth
         layout.itemSize = CGSize(width: cellWidth - 20, height: height)
         layout.minimumLineSpacing = 9
-
         return layout
     }
     
     lazy var roomsCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect.zero,
-                                              collectionViewLayout: flowLayout)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -95,7 +93,7 @@ extension RoomsViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         guard var room = collection?[indexPath.row],
               let imgURL = room.thumbnail else {
-            return emptyCell
+              return emptyCell
         }
 
         try? RoomsNetworkManager().loadImage(from: imgURL) { data in

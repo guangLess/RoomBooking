@@ -29,8 +29,7 @@ final class RoomsNetworkManager {
                 if let rooms = collection?.rooms?.trimCollection() {
                     result = .success(rooms)
                 } else {
-                    result = .failure(NetworkError(info: "There is no rooms avalible at the current db"))
-                    break
+                    result = .failure(NetworkError(info: "There is no data avalible"))
                 }
             case .none:
                 let statusCode = (response as? HTTPURLResponse)?.statusCode
