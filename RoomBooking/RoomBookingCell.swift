@@ -27,7 +27,6 @@ class RoomCell: UICollectionViewCell {
         button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.roundedCorner()
-        button.backgroundColor = .customPurple()
         button.setTitleColor(.white, for: .normal)
         return button
     }()
@@ -97,8 +96,8 @@ class RoomCell: UICollectionViewCell {
         // if 0 spot remains, btn has no action
         if isFull {
             button.backgroundColor = .lightGray
-            button.setNeedsLayout()
         } else {
+            button.backgroundColor = .customPurple()
             button.addTarget(self, action: #selector(bookSelected), for: .touchUpInside)
         }
     }

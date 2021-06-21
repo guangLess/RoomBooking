@@ -26,7 +26,7 @@ extension UIColor {
 // MARK: measurements according to screen size
 extension CGFloat {
     static func intrinsicCollectionViewHeight() -> CGFloat {
-        return  UIScreen.main.bounds.size.height * 3/4
+        return  UIScreen.main.bounds.size.height * 0.77
     }
     
     static func halfScreenWidth() -> CGFloat {

@@ -29,7 +29,7 @@ class RoomsViewController: UIViewController {
     }()
     
     lazy var headerView: UILabel = {
-        let placeHolder = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+        let placeHolder = "Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus quis et."
         let label = UILabel.defaultStyle(text: placeHolder,
                                          font: .systemFont(ofSize: 20, weight: .medium),
                                          textColor: .lightGray,
@@ -102,6 +102,7 @@ extension RoomsViewController: UICollectionViewDataSource, UICollectionViewDeleg
             DispatchQueue.main.async {
                 room.imgData = imgData
                 cell.room = room
+                //cell.setNeedsDisplay()
             }
         }
         
