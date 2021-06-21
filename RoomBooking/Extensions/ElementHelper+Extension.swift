@@ -33,7 +33,7 @@ extension CGFloat {
         return UIScreen.main.bounds.size.width/2
     }
     
-    static func oneThriedScreenWidth() -> CGFloat {
+    static func oneThirdScreenWidth() -> CGFloat {
         return UIScreen.main.bounds.size.width/3
     }
 }

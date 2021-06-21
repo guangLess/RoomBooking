@@ -57,7 +57,7 @@ class RoomCell: UICollectionViewCell {
         // add room name title
         let nameLabelFrame = CGRect(x: padding,
                                     y: imgHeight + padding,
-                                    width: CGFloat.oneThriedScreenWidth(),
+                                    width: CGFloat.oneThirdScreenWidth(),
                                     height: heightUnit)
         
         addNameLable(text: name, nameLabelFrame)
@@ -70,9 +70,9 @@ class RoomCell: UICollectionViewCell {
         addSpotsLabel(spots: spots, spotsLabelFrame)
         
         // add booking btn
-        let buttonFrame = CGRect(x: (contentView.frame.size.width - CGFloat.oneThriedScreenWidth()),
+        let buttonFrame = CGRect(x: (contentView.frame.size.width - CGFloat.oneThirdScreenWidth()),
                                  y: (imgHeight + padding * 1.5),
-                                 width: CGFloat.oneThriedScreenWidth() - padding,
+                                 width: CGFloat.oneThirdScreenWidth() - padding,
                                  height: heightUnit * 1.5)
         addBookingButton(isFull: (spots == 0), buttonFrame)
     }
@@ -94,8 +94,10 @@ class RoomCell: UICollectionViewCell {
         contentView.addSubview(button)
         button.frame = frame
         
+        // if 0 spot remains, btn has no action
         if isFull {
             button.backgroundColor = .lightGray
+            button.setNeedsLayout()
         } else {
             button.addTarget(self, action: #selector(bookSelected), for: .touchUpInside)
         }
