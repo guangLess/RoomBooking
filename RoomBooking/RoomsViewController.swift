@@ -102,7 +102,6 @@ extension RoomsViewController: UICollectionViewDataSource, UICollectionViewDeleg
             DispatchQueue.main.async {
                 room.imgData = imgData
                 cell.room = room
-                //cell.setNeedsDisplay()
             }
         }
         
